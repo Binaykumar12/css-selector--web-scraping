@@ -29,3 +29,4 @@ for book in books:
     print(f"Title: {book_title}, Price: {book_price}")
 
 
+s=random.random(1,3)
