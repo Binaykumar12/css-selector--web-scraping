@@ -21,10 +21,10 @@ soup = BeautifulSoup(response.text, 'lxml')
 
 # Extract the title of the page
 
-books = soup.find_all('article', class_='product_pod')
+books = soup.select('article.product_pod')
 for book in books:
-    book_title = book.h3.a['title']
-    book_price = book.find('p', class_='price_color').text
+    book_title = book.select_one('h3 > a')['title']
+    book_price = book.select_one('p.price_color').text
     print(f"Title: {book_title}, Price: {book_price}")
 
 
