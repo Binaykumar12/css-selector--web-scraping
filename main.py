@@ -29,4 +29,5 @@ for book in books:
     print(f"Title: {book_title}, Price: {book_price}")
 
 
-s=random.random(1,3)
+s=random.uniform(1,3)
+printf(f"Sleep time :{s:.2f} seconds")
