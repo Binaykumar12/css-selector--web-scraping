@@ -19,6 +19,7 @@ response = requests.get(url, headers=headers)
 # Parse the HTML content using BeautifulSoup
 soup = BeautifulSoup(response.text, 'lxml')
 
+
 # Extract the title of the page
 
 books = soup.select('article.product_pod')
