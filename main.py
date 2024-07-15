@@ -30,4 +30,5 @@ for book in books:
 
 
 s=random.uniform(1,3)
-printf(f"Sleep time :{s:.2f} seconds")
+print(f"Sleep time :{s:.2f} seconds")
+time.sleep(s)
