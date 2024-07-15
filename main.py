@@ -27,3 +27,5 @@ for book in books:
     book_title = book.h3.a['title']
     book_price = book.find('p', class_='price_color').text
     print(f"Title: {book_title}, Price: {book_price}")
+
+
