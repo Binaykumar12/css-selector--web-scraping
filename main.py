@@ -22,8 +22,6 @@ soup = BeautifulSoup(response.text, 'lxml')
 
 # Extract the title of the page
 
-
-# Extract and print book titles and prices
 books = soup.find_all('article', class_='product_pod')
 for book in books:
     book_title = book.h3.a['title']
