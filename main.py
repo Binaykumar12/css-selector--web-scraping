@@ -28,6 +28,10 @@ data={
     "Price_name":prices_name
 }
 
+df=pd.DataFrame(data)
+excel_filename = "books.xlsx"
+df.to_excel(excel_filename, index=False)
+
 # Extract the title of the page
 
 books = soup.select('article.product_pod')
