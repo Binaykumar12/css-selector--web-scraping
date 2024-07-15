@@ -20,6 +20,16 @@ response = requests.get(url, headers=headers)
 # Parse the HTML content using BeautifulSoup
 soup = BeautifulSoup(response.text, 'lxml')\
 
+
+
+# Extract the title of the page
+
+books = soup.select('article.product_pod')
+for book in books:
+    book_title = book.select_one('h3 > a')['title']
+    book_price = book.select_one('p.price_color').text
+    print(f"Title: {book_title}, Price: {book_price}")
+
 books_name=[book_title for book in books ]
 prices_name=[book_price for book in books]
 
@@ -30,15 +40,7 @@ data={
 
 df=pd.DataFrame(data)
 excel_filename = "books.xlsx"
-df.to_excel(excel_filename, index=False)
-
-# Extract the title of the page
-
-books = soup.select('article.product_pod')
-for book in books:
-    book_title = book.select_one('h3 > a')['title']
-    book_price = book.select_one('p.price_color').text
-    print(f"Title: {book_title}, Price: {book_price}")
+df.to_excel(excel_filename, index=False)    
 
 
 s=random.uniform(1,3)
