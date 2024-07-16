@@ -14,15 +14,9 @@ headers = {
 
 url = "https://books.toscrape.com/catalogue/page-2.html"
 
-# Make a request with the defined headers
-response = requests.get(url, headers=headers)
+*response = requests.get(url, headers=headers)
 
-# Parse the HTML content using BeautifulSoup
 soup = BeautifulSoup(response.text, 'lxml')\
-
-
-
-# Extract the title of the page
 
 books = soup.select('article.product_pod')
 for book in books:
@@ -41,7 +35,6 @@ data={
 df=pd.DataFrame(data)
 excel_filename = "books.xlsx"
 df.to_excel(excel_filename, index=False)    
-
 
 s=random.uniform(1,3)
 print(f"Sleep time :{s:.2f} seconds")
